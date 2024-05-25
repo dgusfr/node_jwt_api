@@ -1,0 +1,77 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h4 {
+  color: #5c5c5c;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+#games {
+  list-style-type: none;
+  padding: 0;
+}
+
+#games li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#games li button {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Centraliza os botões à direita */
+#games li {
+  position: relative; /* Adiciona posicionamento relativo */
+}
+
+#games li button {
+  position: absolute; /* Adiciona posicionamento absoluto */
+  right: 10px; /* Alinha os botões à direita */
+}
+
+#games li button + button {
+  right: 90px; /* Ajusta o espaçamento entre os botões */
+}
+/* Estilos dos Formulários */
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="button"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
