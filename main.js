@@ -163,6 +163,7 @@ app.post("/auth", (req, res) => {
           JWTSecret,
           { expiresIn: "48h" },
           (err, token) => {
+            //tratamento de erros:
             if (err) {
               res.status(400);
               res.json({ err: "Falha interna" });
@@ -186,6 +187,6 @@ app.post("/auth", (req, res) => {
   }
 });
 
-app.listen(45679, () => {
+app.listen(8000, () => {
   console.log("API RODANDO!");
 });
