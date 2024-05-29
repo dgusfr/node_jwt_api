@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
+//chave mestra da aplicação
 const JWTSecret = "djkshahjksdajksdhasjkdhasjkdhasjkdhasjkd";
 
 app.use(cors());
