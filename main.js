@@ -11,25 +11,34 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//Middleware é uma função que fica entre a requisição e a resposta
+//neste caso a função auth é chamada nas requisições que ela é declarada
 function auth(req, res, next) {
+  // Obtém o token de autorização dos cabeçalhos da requisição
   const authToken = req.headers["authorization"];
 
+  // Verifica se o token de autorização está definido
   if (authToken != undefined) {
+    // Divide o token para retirar o Bearer
     const bearer = authToken.split(" ");
     var token = bearer[1];
 
+    // Verifica o token usando a chave secreta JWT
     jwt.verify(token, JWTSecret, (err, data) => {
       if (err) {
         res.status(401);
         res.json({ err: "Token inválido!" });
       } else {
+        //variaveis que recebem os atributos
         req.token = token;
         req.loggedUser = { id: data.id, email: data.email };
-        req.empresa = "Guia do programador";
+        req.empresa = "Programatrix";
+        // Chama a próxima função na cadeia de middleware
         next();
       }
     });
   } else {
+    // Se o token de autorização não estiver definido, retorna um status 401 (não autorizado) e uma mensagem de erro
     res.status(401);
     res.json({ err: "Token inválido!" });
   }
