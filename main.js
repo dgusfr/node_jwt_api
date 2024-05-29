@@ -29,7 +29,7 @@ function auth(req, res, next) {
         res.status(401);
         res.json({ err: "Token inválido!" });
       } else {
-        //variaveis que recebem os atributos
+        //variaveis globais que recebem os atributos
         req.token = token;
         req.loggedUser = { id: data.id, email: data.email };
         req.empresa = "Programatrix";
