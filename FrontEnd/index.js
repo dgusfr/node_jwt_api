@@ -1,6 +1,6 @@
 function loadGames() {
   axios
-    .get("http://localhost:8000/games")
+    .get("http://localhost:8080/games")
     .then((response) => {
       var games = response.data;
       var list = document.getElementById("games");
@@ -54,7 +54,7 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    const response = await axios.post("http://localhost:8000/auth", {
+    const response = await axios.post("http://localhost:8080/auth", {
       email,
       password,
     });
@@ -90,7 +90,7 @@ function createGame() {
   };
 
   axios
-    .post("http://localhost:8000/game", game)
+    .post("http://localhost:8080/game", game)
     .then((response) => {
       if (response.status == 200) {
         alert("Game cadastrado!");
@@ -106,7 +106,7 @@ function deleteGame(listItem) {
   var id = listItem.getAttribute("data-id");
   console.log(id);
   axios
-    .delete("http://localhost:8000/game/" + id)
+    .delete("http://localhost:8080/game/" + id)
     .then((response) => {
       if (response.status == 200) {
         alert("Game deletado!");
@@ -131,7 +131,7 @@ function updateGame() {
   };
 
   axios
-    .put("http://localhost:8000/game/" + id, game)
+    .put("http://localhost:8080/game/" + id, game)
     .then((response) => {
       if (response.status == 200) {
         alert("Game atualizado!!");
