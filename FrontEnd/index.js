@@ -46,7 +46,7 @@ function loadGames() {
 document.addEventListener("DOMContentLoaded", loadGames);
 
 var axiosConfig = {
-  Headers: {
+  headers: {
     Authorization:
       "Bearer " +
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2aWN0b3JkZXZ0YkBndWlhZG9wcm9ncmFtYWRvci5jb20iLCJpYXQiOjE3MTcwNjk2NTAsImV4cCI6MTcxNzI0MjQ1MH0.8dc7kvTNyQtyM6tHRXguNi85LU_zMXo0o8hd4Ku7hms",
