@@ -68,9 +68,10 @@ Com isso a API já esta rodando, para consumir esta API basta ir no index.html e
 ## Estrutura do Projeto
 
 -Front-end
-index.html
-index.js
-styles.css
+
+1. index.html
+2. index.js
+3. styles.css
 
 -main.js
 
