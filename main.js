@@ -83,7 +83,7 @@ var DB = {
 
 app.get("/games", auth, (req, res) => {
   res.statusCode = 200;
-  res.json({ empresa: req.empresa, user: req.loggedUser, games: DB.games });
+  res.json(DB.games);
 });
 
 app.get("/game/:id", auth, (req, res) => {
