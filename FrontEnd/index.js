@@ -1,4 +1,12 @@
-// Função para carregar a lista de jogos da API e atualizar a interface
+document.addEventListener("DOMContentLoaded", () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+  } else {
+    loadGames(token);
+  }
+});
+
 function loadGames() {
   axios
     .get("http://localhost:8000/games", axiosConfig)
@@ -42,7 +50,6 @@ function loadGames() {
     });
 }
 
-// Chama a função loadGames ao carregar a página
 document.addEventListener("DOMContentLoaded", loadGames);
 
 async function login() {
@@ -90,7 +97,7 @@ function createGame() {
     .then((response) => {
       if (response.status == 200) {
         alert("Game cadastrado!");
-        loadGames(); // Atualiza a lista de jogos após criar um novo jogo
+        loadGames();
       }
     })
     .catch((err) => {
@@ -139,7 +146,6 @@ function updateGame() {
     });
 }
 
-// Função para carregar os dados de um game no formulário de edição
 function loadForm(listItem) {
   var id = listItem.getAttribute("data-id");
   var title = listItem.getAttribute("data-title");
