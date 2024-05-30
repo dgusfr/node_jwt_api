@@ -1,15 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    window.location.href = "login.html";
-  } else {
-    loadGames(token);
-  }
-});
-
 function loadGames() {
   axios
-    .get("http://localhost:8000/games", axiosConfig)
+    .get("http://localhost:8000/games")
     .then((response) => {
       var games = response.data;
       var list = document.getElementById("games");
@@ -52,6 +43,12 @@ function loadGames() {
 
 document.addEventListener("DOMContentLoaded", loadGames);
 
+var axiosConfig = {
+  headers: {
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  },
+};
+
 async function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -61,25 +58,25 @@ async function login() {
       email,
       password,
     });
-    if (response.data.success) {
-      localStorage.setItem("token", response.data.token);
-      window.location.href = "index.html";
+
+    if (response.status === 200) {
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      axiosConfig.headers.Authorization =
+        "Bearer " + localStorage.getItem("token");
+      alert("Login com sucesso");
     } else {
-      alert("Usuário ou senha incorretos.");
+      // Tratar outros possíveis status de resposta aqui, se necessário
+      alert("Erro ao fazer login");
     }
   } catch (error) {
-    console.error("Erro ao fazer login", error);
-    alert("Erro ao fazer login");
+    // Se ocorrer um erro na requisição, exiba uma mensagem de erro
+    console.error("Erro ao fazer login:", error);
+    alert(
+      "Erro ao fazer login. Verifique sua conexão com a internet e tente novamente."
+    );
   }
 }
-
-var axiosConfig = {
-  headers: {
-    Authorization:
-      "Bearer " +
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2aWN0b3JkZXZ0YkBndWlhZG9wcm9ncmFtYWRvci5jb20iLCJpYXQiOjE3MTcwNjk2NTAsImV4cCI6MTcxNzI0MjQ1MH0.8dc7kvTNyQtyM6tHRXguNi85LU_zMXo0o8hd4Ku7hms",
-  },
-};
 
 function createGame() {
   var titleInput = document.getElementById("title").value;
