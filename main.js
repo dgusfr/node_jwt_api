@@ -69,7 +69,7 @@ var DB = {
     {
       id: 1,
       name: "Diego",
-      email: "diego",
+      email: "diego@email.com",
       password: "1234",
     },
   ],

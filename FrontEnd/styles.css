@@ -24,8 +24,8 @@ footer {
 /* Estilo do conteúdo principal */
 main {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column; /* Alinha seções em coluna */
+  align-items: center; /* Centraliza as seções horizontalmente */
   padding: 20px;
 }
 
@@ -34,9 +34,10 @@ section {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-  margin: 20px;
+  margin: 20px 0; /* Espaço entre as seções */
   padding: 20px;
-  width: 300px;
+  width: 100%;
+  max-width: 600px; /* Limita a largura máxima das seções */
 }
 
 /* Estilo dos títulos das seções */
@@ -44,4 +45,109 @@ h2 {
   color: #333;
   font-size: 24px;
   margin-top: 0;
+}
+
+/* Estilo da tela de login */
+#login-section {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#login-section input[type="text"],
+#login-section input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+#login-section button {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+#login-section button:hover {
+  background-color: #555;
+}
+
+/* Estilo dos formulários */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 5px 0 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+form button {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Estilo da lista de games */
+#games-list {
+  list-style: none;
+  padding: 0;
+}
+
+#games-list li {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#games-list li button {
+  background-color: #e0d5d4;
+  border: none;
+  border-radius: 4px;
+  color: rgb(10, 2, 2);
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 10px;
+}
+
+#games-list li button:hover {
+  background-color: #e08277;
+  color: #fff;
 }
