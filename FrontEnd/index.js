@@ -45,6 +45,27 @@ function loadGames() {
 // Chama a função loadGames ao carregar a página
 document.addEventListener("DOMContentLoaded", loadGames);
 
+async function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const response = await axios.post("http://localhost:8000/auth", {
+      email,
+      password,
+    });
+    if (response.data.success) {
+      localStorage.setItem("token", response.data.token);
+      window.location.href = "index.html";
+    } else {
+      alert("Usuário ou senha incorretos.");
+    }
+  } catch (error) {
+    console.error("Erro ao fazer login", error);
+    alert("Erro ao fazer login");
+  }
+}
+
 var axiosConfig = {
   headers: {
     Authorization:
