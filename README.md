@@ -30,10 +30,10 @@ API REST de um sistema de consulta e manipulação de jogos em um banco de dados
 
 <div style="display: flex; flex-direction: row;">
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
-    <img src="img/node.png" alt="Logo Linguagem" width="300"/>
+    <img src="img/node.png" alt="Logo Linguagem" width="150"/>
   </div>
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
-    <img src="img/express.png" alt="Logo Linguagem" width="300"/>
+    <img src="img/express.png" alt="Logo Linguagem" width="150"/>
   </div>
 </div>
 
