@@ -55,7 +55,7 @@ app.get("/game/:id", auth, (req, res) => {
 
 app.post("/game", auth, (req, res) => {
   const { title, year, price } = req.body;
-  const newId = Date.now().toString();
+  const newId = Math.max(...Object.keys(dataBase.games).map(Number)) + 1;
   dataBase.games[newId] = { title, year, price };
   res.status(201).send();
 });
