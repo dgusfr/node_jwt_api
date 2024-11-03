@@ -27,7 +27,7 @@ API REST de um sistema de consulta e manipulação de jogos em um banco de dados
     <img src="img/node.png" alt="Logo Linguagem" width="150"/>
   </div>
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
-    <img src="img/express.png" alt="Logo Linguagem" width="150"/>
+    <img src="img/js.png" alt="Logo Linguagem" width="150"/>
   </div>
 </div>
 
