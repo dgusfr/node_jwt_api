@@ -61,18 +61,11 @@ app.post("/game", auth, (req, res) => {
 });
 
 app.delete("/game/:id", auth, (req, res) => {
-  if (isNaN(req.params.id)) {
-    res.sendStatus(400);
+  if (!dataBase.games[req.params.id]) {
+    return res.status(404).send();
   } else {
-    var id = parseInt(req.params.id);
-    var index = DB.games.findIndex((g) => g.id == id);
-
-    if (index == -1) {
-      res.sendStatus(404);
-    } else {
-      DB.games.splice(index, 1);
-      res.sendStatus(200);
-    }
+    delete dataBase.games[req.params.id];
+    res.status(200).send();
   }
 });
 
