@@ -4,7 +4,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-const JWT_SECRET = "djkshahjksdajksdhasjkdhasjkdhasjkdhasjkd";
+const JWT_SECRET = "v3ry$3cur3&UnpredictableSecretKey!123";
 
 const dataBase = {
   games: {
@@ -28,7 +28,6 @@ function auth(req, res, next) {
   const token = authToken.split(" ")[1];
   jwt.verify(token, JWT_SECRET, (err, data) => {
     if (err) return res.status(401).json({ error: "Token inválido!" });
-
     req.user = { id: data.id, email: data.email };
     next();
   });
@@ -45,12 +44,8 @@ app.get("/games", auth, (req, res) => {
 
 app.get("/game/:id", auth, (req, res) => {
   const game = dataBase.games[req.params.id];
-
-  if (!game) {
-    return res.status(404).send();
-  } else {
-    res.status(200).json({ id: parseInt(req.params.id), ...game });
-  }
+  if (!game) return res.status(404).send();
+  res.status(200).json({ id: parseInt(req.params.id), ...game });
 });
 
 app.post("/game", auth, (req, res) => {
@@ -61,27 +56,21 @@ app.post("/game", auth, (req, res) => {
 });
 
 app.delete("/game/:id", auth, (req, res) => {
-  if (!dataBase.games[req.params.id]) {
-    return res.status(404).send();
-  } else {
-    delete dataBase.games[req.params.id];
-    res.status(200).send();
-  }
+  if (!dataBase.games[req.params.id]) return res.status(404).send();
+  delete dataBase.games[req.params.id];
+  res.status(200).send();
 });
 
 app.put("/game/:id", auth, (req, res) => {
   const game = dataBase.games[req.params.id];
-  if (!game) {
-    return res.status(404).send();
-  } else {
-    const { title, year, price } = req.body;
-    dataBase.games[req.params.id] = {
-      title: title || game.title,
-      year: year || game.year,
-      price: price || game.price,
-    };
-    res.status(200).send();
-  }
+  if (!game) return res.status(404).send();
+  const { title, year, price } = req.body;
+  dataBase.games[req.params.id] = {
+    title: title || game.title,
+    year: year || game.year,
+    price: price || game.price,
+  };
+  res.status(200).send();
 });
 
 app.post("/auth", (req, res) => {
@@ -97,7 +86,6 @@ app.post("/auth", (req, res) => {
     { expiresIn: "48h" },
     (err, token) => {
       if (err) return res.status(500).json({ error: "Falha interna" });
-
       res.status(200).json({ token });
     }
   );
