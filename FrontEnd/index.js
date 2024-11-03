@@ -5,6 +5,16 @@ const axiosConfig = {
   },
 };
 
+function checkLoginStatus() {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axiosConfig.headers.Authorization = `Bearer ${token}`;
+    loadGames();
+  } else {
+    alert("Por favor, faça login para acessar a lista de jogos.");
+  }
+}
+
 function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -103,3 +113,5 @@ function createButton(text, onClick) {
   button.addEventListener("click", onClick);
   return button;
 }
+
+document.addEventListener("DOMContentLoaded", checkLoginStatus);
