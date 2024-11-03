@@ -35,42 +35,29 @@ function auth(req, res, next) {
 }
 
 app.get("/games", auth, (req, res) => {
-  res
-    .status(200)
-    .json(
-      Object.entries(dataBase.games).map(([id, game]) => ({
-        id: parseInt(id),
-        ...game,
-      }))
-    );
+  res.status(200).json(
+    Object.entries(dataBase.games).map(([id, game]) => ({
+      id: parseInt(id),
+      ...game,
+    }))
+  );
 });
 
 app.get("/game/:id", auth, (req, res) => {
-  if (isNaN(req.params.id)) {
-    res.sendStatus(400);
+  const game = dataBase.games[req.params.id];
+
+  if (!game) {
+    return res.status(404).send();
   } else {
-    var id = parseInt(req.params.id);
-
-    var game = DB.games.find((g) => g.id == id);
-
-    if (game != undefined) {
-      res.statusCode = 200;
-      res.json(game);
-    } else {
-      res.sendStatus(404);
-    }
+    res.status(200).json({ id: parseInt(req.params.id), ...game });
   }
 });
 
 app.post("/game", auth, (req, res) => {
-  var { title, price, year } = req.body;
-  DB.games.push({
-    id: 2323,
-    title,
-    price,
-    year,
-  });
-  res.sendStatus(200);
+  const { title, year, price } = req.body;
+  const newId = Date.now().toString();
+  dataBase.games[newId] = { title, year, price };
+  res.status(201).send();
 });
 
 app.delete("/game/:id", auth, (req, res) => {
