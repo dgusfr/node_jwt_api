@@ -21,6 +21,19 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+function auth(req, res, next) {
+  const authToken = req.headers["authorization"];
+  if (!authToken) return res.status(401).json({ error: "Token inválido!" });
+
+  const token = authToken.split(" ")[1];
+  jwt.verify(token, JWT_SECRET, (err, data) => {
+    if (err) return res.status(401).json({ error: "Token inválido!" });
+
+    req.user = { id: data.id, email: data.email };
+    next();
+  });
+}
+
 app.get("/games", auth, (req, res) => {
   res.statusCode = 200;
   res.json(DB.games);
