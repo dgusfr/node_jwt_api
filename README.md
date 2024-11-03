@@ -1,6 +1,6 @@
-# API REST com autenticação JWT
+# GameVerse
 
-API REST de um sistema de consulta e manipulação de jogos em um banco de dados fictício.
+O GameVerse é uma aplicação Fullstack com autenticação em uma API REST permitindo consultar e editar jogos em um banco de dados fictício.
 
 ## Logo
 
