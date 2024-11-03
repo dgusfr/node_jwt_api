@@ -35,8 +35,14 @@ function auth(req, res, next) {
 }
 
 app.get("/games", auth, (req, res) => {
-  res.statusCode = 200;
-  res.json(DB.games);
+  res
+    .status(200)
+    .json(
+      Object.entries(dataBase.games).map(([id, game]) => ({
+        id: parseInt(id),
+        ...game,
+      }))
+    );
 });
 
 app.get("/game/:id", auth, (req, res) => {
