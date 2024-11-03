@@ -69,33 +69,18 @@ app.delete("/game/:id", auth, (req, res) => {
   }
 });
 
-app.put("/game/:id", (req, res) => {
-  if (isNaN(req.params.id)) {
-    res.sendStatus(400);
+app.put("/game/:id", auth, (req, res) => {
+  const game = dataBase.games[req.params.id];
+  if (!game) {
+    return res.status(404).send();
   } else {
-    var id = parseInt(req.params.id);
-
-    var game = DB.games.find((g) => g.id == id);
-
-    if (game != undefined) {
-      var { title, price, year } = req.body;
-
-      if (title != undefined) {
-        game.title = title;
-      }
-
-      if (price != undefined) {
-        game.price = price;
-      }
-
-      if (year != undefined) {
-        game.year = year;
-      }
-
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(404);
-    }
+    const { title, year, price } = req.body;
+    dataBase.games[req.params.id] = {
+      title: title || game.title,
+      year: year || game.year,
+      price: price || game.price,
+    };
+    res.status(200).send();
   }
 });
 
