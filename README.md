@@ -10,12 +10,6 @@ API REST de um sistema de consulta e manipulação de jogos em um banco de dados
   <img src="img/Front.png" alt="Imagem do Projeto" width="600">
 </div>
 
-### Teste da API
-
-<div align="center">
-  <img src="img/testAPI.png" alt="Imagem do Projeto" width="1000">
-</div>
-
 ## Sumário
 
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
