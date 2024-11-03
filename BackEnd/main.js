@@ -85,42 +85,22 @@ app.put("/game/:id", auth, (req, res) => {
 });
 
 app.post("/auth", (req, res) => {
-  var { email, password } = req.body;
+  const { email, password } = req.body;
+  const user = Object.values(dataBase.users).find((u) => u.email === email);
 
-  if (email != undefined) {
-    var user = DB.users.find((u) => u.email == email);
-    if (user != undefined) {
-      if (user.password == password) {
-        //payload do token, sua sua chave secreta e tempo de expiração.
-        jwt.sign(
-          { id: user.id, email: user.email },
-          JWTSecret,
-          { expiresIn: "48h" },
-          (err, token) => {
-            //tratamento de erros:
-            if (err) {
-              res.status(400);
-              res.json({ err: "Falha interna" });
-            } else {
-              res.status(200);
-              res.json({ token: token });
-            }
-          }
-        );
-      } else {
-        res.status(401);
-        res.json({ err: "Credenciais inválidas!" });
-      }
-    } else {
-      res.status(404);
-      res.json({ err: "O E-mail enviado não existe na base de dados!" });
+  if (!user || user.password !== password)
+    return res.status(401).json({ error: "Credenciais inválidas!" });
+
+  jwt.sign(
+    { id: user.id, email: user.email },
+    JWT_SECRET,
+    { expiresIn: "48h" },
+    (err, token) => {
+      if (err) return res.status(500).json({ error: "Falha interna" });
+
+      res.status(200).json({ token });
     }
-  } else {
-    res.status(400);
-    res.send({ err: "O E-mail enviado é inválido" });
-  }
+  );
 });
 
-app.listen(3000, () => {
-  console.log("API RODANDO!");
-});
+app.listen(3000, () => console.log("Server running on port 3000"));
