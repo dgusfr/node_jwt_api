@@ -7,7 +7,7 @@ API REST de um sistema de consulta e manipulação de jogos em um banco de dados
 ### Interface do usuário
 
 <div align="center">
-  <img src="img/Front.png" alt="Imagem do Projeto" width="600">
+  <img src="img/logo.png" alt="Imagem do Projeto" width="600">
 </div>
 
 ## Sumário
