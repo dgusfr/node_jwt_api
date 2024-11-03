@@ -114,4 +114,31 @@ function createButton(text, onClick) {
   return button;
 }
 
+function logout() {
+  localStorage.removeItem("token");
+  axiosConfig.headers.Authorization = "";
+  document.getElementById("login-status").textContent =
+    "Você foi desconectado.";
+  document.getElementById("login-status").style.display = "block";
+  loadGames();
+}
+
+function checkLoginStatus() {
+  const token = localStorage.getItem("token");
+  const loginStatus = document.getElementById("login-status");
+
+  if (token) {
+    axiosConfig.headers.Authorization = `Bearer ${token}`;
+    loadGames();
+    loginStatus.textContent = "Você está logado!";
+    loginStatus.style.display = "block";
+  } else {
+    loginStatus.textContent =
+      "Por favor, faça login para acessar a lista de jogos.";
+    loginStatus.style.display = "block";
+  }
+}
+
+window.onload = checkLoginStatus;
+
 document.addEventListener("DOMContentLoaded", checkLoginStatus);

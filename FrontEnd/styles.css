@@ -1,11 +1,9 @@
-/* Estilo global */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Estilo do cabeçalho */
 header {
   background-color: #333;
   color: #fff;
@@ -13,7 +11,6 @@ header {
   text-align: center;
 }
 
-/* Estilo do rodapé */
 footer {
   background-color: #333;
   color: #fff;
@@ -21,37 +18,33 @@ footer {
   text-align: center;
 }
 
-/* Estilo do conteúdo principal */
 main {
   display: flex;
-  flex-direction: column; /* Alinha seções em coluna */
-  align-items: center; /* Centraliza as seções horizontalmente */
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 
-/* Estilo das seções */
 section {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-  margin: 20px 0; /* Espaço entre as seções */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
   padding: 20px;
   width: 100%;
-  max-width: 600px; /* Limita a largura máxima das seções */
+  max-width: 600px;
 }
 
-/* Estilo dos títulos das seções */
 h2 {
   color: #333;
   font-size: 24px;
   margin-top: 0;
 }
 
-/* Estilo da tela de login */
 #login-section {
   background-color: #f4f4f4;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 100%;
   max-width: 400px;
@@ -69,22 +62,42 @@ h2 {
   width: 100%;
 }
 
+#login-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#button-container {
+  display: flex;
+  margin-top: 10px;
+}
+
 #login-section button {
-  background-color: #333;
   border: none;
   border-radius: 4px;
   color: white;
   cursor: pointer;
   font-size: 16px;
   padding: 10px;
-  width: 100%;
+  margin-right: 10px;
 }
 
-#login-section button:hover {
+#login-section button.login {
+  background-color: #53964a;
+}
+
+#login-section button.login:hover {
   background-color: #555;
 }
 
-/* Estilo dos formulários */
+#login-section button.logout {
+  background-color: #e74c3c;
+}
+
+#login-section button.logout:hover {
+  background-color: #c0392b;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -106,7 +119,7 @@ form input[type="number"] {
 }
 
 form button {
-  background-color: #333;
+  background-color: #333333;
   border: none;
   border-radius: 4px;
   color: white;
@@ -120,7 +133,6 @@ form button:hover {
   background-color: #555;
 }
 
-/* Estilo da lista de games */
 #games-list {
   list-style: none;
   padding: 0;
@@ -150,4 +162,51 @@ form button:hover {
 #games-list li button:hover {
   background-color: #e08277;
   color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  header,
+  footer {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  #login-section {
+    max-width: 90%;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  #login-section button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #login-section input[type="text"],
+  #login-section input[type="password"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #games-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #games-list li button {
+    width: 100%;
+    margin-top: 5px;
+  }
 }

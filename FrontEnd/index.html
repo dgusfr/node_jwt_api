@@ -12,12 +12,16 @@
     <header>
         <h1>GameVerse Store</h1>
     </header>
+    <p id="login-status" style="display: none;"></p>
     <main>
         <section id="login-section">
             <h2>Login</h2>
             <input type="text" name="email" placeholder="email@email.com" id="email">
             <input type="password" name="password" placeholder="password" id="password">
-            <button onclick="login()">Entrar</button>
+            <div id="button-container">
+                <button class="login" onclick="login()">Login</button>
+                <button class="logout" onclick="logout()">Logout</button>
+            </div>
         </section>
         <section>
             <h2>Lista de Games</h2>
