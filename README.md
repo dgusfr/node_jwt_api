@@ -200,6 +200,8 @@ Corpo da requisição pode conter os seguintes campos para atualização:
 - Status Code: 200 OK se o jogo for atualizado com sucesso.
 - Status Code: 404 Not Found se o jogo não for encontrado.
 
+<br>
+
 # Autor
 
 Desenvolvido por Diego Franco.
