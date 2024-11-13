@@ -39,7 +39,7 @@ O GameVerse é uma aplicação Fullstack com autenticação em uma API REST perm
 
 ## Status
 
-<!-- ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)-->
+![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
 <br>
 
