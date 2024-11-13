@@ -41,6 +41,8 @@ O GameVerse é uma aplicação Fullstack com autenticação em uma API REST perm
 
 <!-- ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)-->
 
+<br>
+
 ## Descrição
 
 Esse projeto consiste em uma API de games responsável por realizar o login com autenticação do usuário, este que pode adicionar novos jogos a lista, pode excluir ou editar os jogos.
