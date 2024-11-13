@@ -108,6 +108,7 @@ Exemplo de corpo de resposta:
 ```
 
 <br>
+
 #### GET /games
 
 Este endpoint retorna a lista de jogos disponíveis.
@@ -124,6 +125,8 @@ Nenhum.
   - `title` (string): O título do jogo.
   - `year` (number): O ano de lançamento do jogo.
   - `price` (number): O preço do jogo.
+ 
+<br>
 
 #### GET /game/:id
 
