@@ -2,7 +2,7 @@
 
 O GameVerse é uma aplicação Fullstack com autenticação em uma API REST permitindo consultar e editar jogos em um banco de dados fictício.
 
-## Logo
+<br>
 
 ### Interface do usuário
 
