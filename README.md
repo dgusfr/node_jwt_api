@@ -146,6 +146,8 @@ Este endpoint retorna um jogo específico com base no seu ID.
   - `year` (number): O ano de lançamento do jogo.
   - `price` (number): O preço do jogo.
 
+<br>
+
 #### POST /game
 
 Este endpoint adiciona um novo jogo à lista de jogos.
