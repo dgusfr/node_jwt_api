@@ -57,6 +57,8 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 - Edição de jogos no banco de dados.
 - Exclusão jogos no banco de dados.
 
+<br>
+
 ## Como Usar
 
 1. Clone o reṕositorio em sua maquina local
