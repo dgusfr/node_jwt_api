@@ -22,6 +22,8 @@ O GameVerse é uma aplicação Fullstack com autenticação em uma API REST perm
 - [Documnetação da API](#documentação-da-api)
 - [Autor](#autor)
 
+<br>
+
 ## Tecnologias Utilizadas
 
 <div style="display: flex; flex-direction: row;">
