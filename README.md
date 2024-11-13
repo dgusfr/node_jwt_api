@@ -72,12 +72,14 @@ Com isso a API já esta rodando, para consumir esta API basta ir no index.html e
 <br>
 
 ## Documentação
+<br>
 
 ### Endpoints
 
 #### POST /auth
 
 Este endpoint autentica um usuário e retorna um token de acesso JWT válido para uso em endpoints protegidos.
+<br>
 
 ##### Parâmetros:
 
