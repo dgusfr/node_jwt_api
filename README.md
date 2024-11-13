@@ -164,6 +164,8 @@ Corpo da requisição deve conter os seguintes campos:
 
 - Status Code: 200 OK se o jogo for adicionado com sucesso.
 
+<br>
+
 #### DELETE /game/:id
 
 Este endpoint exclui um jogo com base no seu ID.
