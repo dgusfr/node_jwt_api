@@ -69,6 +69,8 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 
 Com isso a API já esta rodando, para consumir esta API basta ir no index.html e utilizar a extensão liveServer para ter acesso a interface.
 
+<br>
+
 ## Documentação
 
 ### Endpoints
