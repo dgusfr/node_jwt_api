@@ -179,6 +179,8 @@ Este endpoint exclui um jogo com base no seu ID.
 - Status Code: 200 OK se o jogo for excluído com sucesso.
 - Status Code: 404 Not Found se o jogo não for encontrado.
 
+<br>
+
 #### PUT /game/:id
 
 Este endpoint atualiza as informações de um jogo existente com base no seu ID.
