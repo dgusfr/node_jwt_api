@@ -69,6 +69,7 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 <br>
 
 #### POST /auth
+<br>
 
 Este endpoint autentica um usuário e retorna um token de acesso JWT válido para uso em endpoints protegidos.
 <br>
