@@ -62,7 +62,6 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 ## Como Usar
 
 1. Clone o reṕositorio em sua maquina local
-2. cd pastaDoArquivo
 <br>
 
 ## Documentação
