@@ -124,8 +124,12 @@ Nenhum.
   - `price` (number): O preço do jogo.
  
 <br>
+<br>
+
 
 #### GET /game/:id
+<br>
+
 
 Este endpoint retorna um jogo específico com base no seu ID.
 
