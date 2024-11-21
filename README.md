@@ -65,7 +65,6 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 2. cd pastaDoArquivo
 3. npm init
 4. npm install express --save
-5. node main.js
 
 
 <br>
