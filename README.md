@@ -101,8 +101,11 @@ Exemplo de corpo de resposta:
 ```
 
 <br>
+<br>
 
 #### GET /games
+<br>
+
 
 Este endpoint retorna a lista de jogos disponíveis.
 <br>
