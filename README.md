@@ -64,8 +64,6 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 1. Clone o reṕositorio em sua maquina local
 2. cd pastaDoArquivo
 3. npm init
-4. npm install express --save
-
 
 <br>
 
