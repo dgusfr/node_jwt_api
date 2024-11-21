@@ -75,6 +75,7 @@ Com isso a API já esta rodando, para consumir esta API basta ir no index.html e
 <br>
 
 ### Endpoints
+<br>
 
 #### POST /auth
 
