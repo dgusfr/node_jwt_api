@@ -187,6 +187,8 @@ Este endpoint exclui um jogo com base no seu ID.
 <br>
 
 #### PUT /game/:id
+<br>
+
 
 Este endpoint atualiza as informações de um jogo existente com base no seu ID.
 
