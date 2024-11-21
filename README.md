@@ -67,7 +67,6 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 4. npm install express --save
 5. node main.js
 
-Com isso a API já esta rodando, para consumir esta API basta ir no index.html e utilizar a extensão liveServer para ter acesso a interface.
 
 <br>
 
