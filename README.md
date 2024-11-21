@@ -66,6 +66,7 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 
 ### Endpoints
 <br>
+<br>
 
 #### POST /auth
 
