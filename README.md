@@ -148,8 +148,12 @@ Este endpoint retorna um jogo específico com base no seu ID.
   - `price` (number): O preço do jogo.
 
 <br>
+<br>
+
 
 #### POST /game
+<br>
+
 
 Este endpoint adiciona um novo jogo à lista de jogos.
 
