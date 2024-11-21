@@ -113,6 +113,7 @@ Exemplo de corpo de resposta:
 #### GET /games
 
 Este endpoint retorna a lista de jogos disponíveis.
+<br>
 
 ##### Parâmetros:
 
