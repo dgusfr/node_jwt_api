@@ -59,16 +59,18 @@ Esse projeto consiste em uma API de games responsável por realizar o login com 
 
 <br>
 
-
 ## Documentação
+
 <br>
 <br>
 
 ### Endpoints
+
 <br>
 <br>
 
 #### POST /auth
+
 <br>
 
 Este endpoint autentica um usuário e retorna um token de acesso JWT válido para uso em endpoints protegidos.
@@ -104,8 +106,8 @@ Exemplo de corpo de resposta:
 <br>
 
 #### GET /games
-<br>
 
+<br>
 
 Este endpoint retorna a lista de jogos disponíveis.
 <br>
@@ -122,14 +124,13 @@ Nenhum.
   - `title` (string): O título do jogo.
   - `year` (number): O ano de lançamento do jogo.
   - `price` (number): O preço do jogo.
- 
-<br>
-<br>
 
+<br>
+<br>
 
 #### GET /game/:id
-<br>
 
+<br>
 
 Este endpoint retorna um jogo específico com base no seu ID.
 
@@ -150,10 +151,9 @@ Este endpoint retorna um jogo específico com base no seu ID.
 <br>
 <br>
 
-
 #### POST /game
-<br>
 
+<br>
 
 Este endpoint adiciona um novo jogo à lista de jogos.
 
@@ -169,6 +169,7 @@ Corpo da requisição deve conter os seguintes campos:
 
 - Status Code: 200 OK se o jogo for adicionado com sucesso.
 
+<br>
 <br>
 
 #### DELETE /game/:id
@@ -187,8 +188,8 @@ Este endpoint exclui um jogo com base no seu ID.
 <br>
 
 #### PUT /game/:id
-<br>
 
+<br>
 
 Este endpoint atualiza as informações de um jogo existente com base no seu ID.
 
