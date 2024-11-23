@@ -212,6 +212,7 @@ Corpo da requisição pode conter os seguintes campos para atualização:
 - Status Code: 404 Not Found se o jogo não for encontrado.
 
 <br>
+<br>
 
 # Autor
 
