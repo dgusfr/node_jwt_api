@@ -174,6 +174,8 @@ Corpo da requisição deve conter os seguintes campos:
 
 #### DELETE /game/:id
 
+<br>
+
 Este endpoint exclui um jogo com base no seu ID.
 
 ##### Parâmetros:
@@ -185,6 +187,7 @@ Este endpoint exclui um jogo com base no seu ID.
 - Status Code: 200 OK se o jogo for excluído com sucesso.
 - Status Code: 404 Not Found se o jogo não for encontrado.
 
+<br>
 <br>
 
 #### PUT /game/:id
